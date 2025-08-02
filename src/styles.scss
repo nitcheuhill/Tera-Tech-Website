@@ -1,0 +1,32 @@
+// Dans src/styles.scss
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 ;
+  padding: 0 ;
+}
+@font-face {
+    font-family: 'poppins-regular';
+    src: url('/fonts/poppins/Poppins-Regular.ttf')format('truetype');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'poppins-bold';
+    src: url('/fonts/poppins/Poppins-Bold.ttf')format('truetype');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'baskerville-regular';
+    src: url('/fonts/poppins/Baskerville/LibreBaskerville-Regular.ttf')format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'baskerville-bold';
+    src: url('/fonts/poppins/Baskerville/LibreBaskerville-Bold.ttf')format('truetype');
+    font-style: normal;
+}

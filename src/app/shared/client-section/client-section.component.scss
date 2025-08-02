@@ -1,0 +1,197 @@
+/* Trust Section */
+.trust-section {
+  padding: 2rem 6rem 2rem 6rem;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+/* Container */
+.trust-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+/* Title */
+.trust-title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 4rem;
+  color: #272D67;
+  font-family: 'Baskerville-regular';
+}
+
+.title-orange {
+  color: #ff6b35;
+}
+
+/* Logos Wrapper */
+.logos-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  mask: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  -webkit-mask: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+/* Logos Slider */
+.logos-slider {
+  display: flex;
+  width: max-content;
+  animation: slide 30s linear infinite;
+}
+
+.logos-slider:hover {
+  animation-play-state: paused;
+}
+
+/* Logo Item */
+.logo-item {
+  flex: 0 0 auto;
+  margin: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.logo-item:hover {
+  transform: scale(1.1);
+}
+
+/* Logo Image */
+.logo-image {
+  height: 80px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.logo-item:hover .logo-image {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.05);
+}
+
+/* Animation Keyframes */
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Tablet Responsive (769px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .trust-container {
+    padding: 0 3rem;
+  }
+  
+  .trust-title {
+    font-size: 30px;
+    margin-bottom: 3rem;
+  }
+  
+  .logo-item {
+    margin: 0 1.5rem;
+  }
+  
+  .logo-image {
+    height: 70px;
+    max-width: 180px;
+  }
+  
+  .logos-slider {
+    animation-duration: 25s;
+  }
+}
+
+/* Mobile Responsive (768px and below) */
+@media (max-width: 768px) {
+  .trust-section {
+    padding: 4rem 0;
+  }
+  
+  .trust-container {
+    padding: 0 1.5rem;
+  }
+  
+  .trust-title {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .logo-item {
+    margin: 0 1rem;
+  }
+  
+  .logo-image {
+    height: 60px;
+    max-width: 150px;
+  }
+  
+  .logos-slider {
+    animation-duration: 20s;
+  }
+  
+  .logos-wrapper {
+    mask: linear-gradient(
+      to right,
+      transparent 0%,
+      black 5%,
+      black 95%,
+      transparent 100%
+    );
+    -webkit-mask: linear-gradient(
+      to right,
+      transparent 0%,
+      black 5%,
+      black 95%,
+      transparent 100%
+    );
+  }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  .trust-section {
+    padding: 3rem 0;
+  }
+  
+  .trust-container {
+    padding: 0 1rem;
+  }
+  
+  .trust-title {
+    font-size: 20px;
+    margin-bottom: 2rem;
+  }
+  
+  .logo-item {
+    margin: 0 0.75rem;
+  }
+  
+  .logo-image {
+    height: 50px;
+    max-width: 120px;
+  }
+  
+  .logos-slider {
+    animation-duration: 15s;
+  }
+}

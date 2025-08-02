@@ -1,0 +1,39 @@
+<section
+  class="stat-section"
+  appIntersectionObserver
+  [threshold]="0.5"
+  (intersecting)="onIntersection($event)"
+>
+  <div class="stat-container">
+    <h2 class="section-title">{{ title }}</h2>
+
+    <div class="content-wrapper">
+      <!-- Image principale -->
+      <div class="main-image-container">
+        <img
+          [src]="mainImage"
+          alt="Équipe travaillant sur des analyses"
+          class="main-image"
+        />
+      </div>
+
+      <!-- Grille des statistiques -->
+      <div class="stats-grid">
+        <div
+          class="stat-item"
+          *ngFor="let stat of statistics; trackBy: trackByStat"
+        >
+          <div class="stat-icon">
+            <img [src]="stat.icon" [alt]="stat.description" />
+          </div>
+          <div class="stat-content">
+            <div class="stat-number">
+              {{ formatNumber(stat.currentValue) }}
+            </div>
+            <div class="stat-description">{{ stat.description }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
