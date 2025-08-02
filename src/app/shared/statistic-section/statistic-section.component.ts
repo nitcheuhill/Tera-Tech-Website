@@ -21,24 +21,24 @@ export class StatisticSectionComponent {
     },
     {
       icon: '/Assets/Hero-section/clipboard.svg',
-      number: '150',
-      targetValue: 150,
+      number: '60',
+      targetValue: 60,
       currentValue: 0,
-      description: 'Plus de 150 assistance depuis sa création',
+      description: 'Plus de 60 projets depuis sa création',
     },
     {
       icon: '/Assets/Hero-section/clock.svg',
       number: '11200',
       targetValue: 11200,
       currentValue: 0,
-      description: 'Plus de 11200 heures de services depuis sa création',
+      description: 'Plus de 11200 heures de spécialisation depuis sa création',
     },
     {
       icon: '/Assets/Hero-section/smiley-heart.svg',
       number: '50',
       targetValue: 50,
       currentValue: 0,
-      description: 'Plus de 50 clients satisfaits depuis sa création',
+      description: 'Plus de 50 clients satisfaits',
     },
   ];
 

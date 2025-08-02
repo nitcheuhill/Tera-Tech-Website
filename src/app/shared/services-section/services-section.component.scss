@@ -1,0 +1,255 @@
+/* services-section.component.css */
+
+.services-section {
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+  overflow: visible; /* Changé pour permettre le débordement */
+}
+
+.services-container {
+  max-width: none; /* Supprimé pour permettre le débordement */
+  margin: 0;
+  padding-left: 6rem;
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+/* Partie gauche - Contenu texte */
+.text-content {
+  flex: 0 0 400px;
+  padding-right: 2rem;
+  /* Contraindre la largeur maximale du texte */
+  max-width: calc(1400px - 400px);
+}
+
+.section-title {
+  font-size: 30px;
+  font-weight: 100;
+  font-family: 'baskerville-regular';
+  color: #272D67;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.highlight {
+  color: #ff6b35;
+}
+
+.section-description {
+  font-size: 1.1rem;
+  color: #272D67;
+  line-height: 1.6;
+  font-family: 'poppins-regular';
+  font-weight: 100;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  background-color: #272D67;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 100;
+  font-family: 'poppins-regular';
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #1f2456;
+  transform: translateY(-2px);
+}
+
+/* Partie droite - Services */
+.services-grid-container {
+  flex: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+  /* Permet de déborder vers la droite */
+  width: 100%;
+   scrollbar-width: thin;
+  scrollbar-color: #272D67 #f1f1f1;
+  
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 300px); /* 4 services sur desktop */
+  gap: 1rem;
+  min-width: 1240px; /* Force le scroll horizontal */
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+}
+
+.service-card {
+  position: relative;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #272D67;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.service-card:hover .service-overlay {
+  opacity: 0.5;
+}
+
+.service-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  color: white;
+  z-index: 2;
+}
+
+.service-title {
+  font-size: 16px;
+  font-family: 'baskerville-regular';
+  font-weight: 100;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* Responsive Design */
+
+/* Tablette */
+@media (max-width: 1024px) {
+  .services-container {
+    padding-left: 4rem;
+  }
+
+  .content-wrapper {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .text-content {
+    flex: none;
+    padding-right: 0;
+    max-width: 600px;
+  }
+
+  .services-grid-container {
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  .services-grid {
+    /* Garde le scroll horizontal sur tablette */
+    display: flex;
+    grid-template-columns: none;
+    gap: 1rem;
+    min-width: auto;
+    padding-right: 4rem;
+  }
+
+  .service-card {
+    min-width: 250px;
+    width: 250px;
+    height: 300px;
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+  .services-section {
+    padding: 1.5rem 0;
+  }
+
+  .services-container {
+    padding-left: 2rem;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .section-description {
+    font-size: 16px;
+  }
+
+  .services-grid-container {
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  .services-grid {
+    /* Scroll horizontal sur mobile aussi */
+    display: flex;
+    grid-template-columns: none;
+    gap: 1rem;
+    padding-right: 2rem;
+  }
+
+  .service-card {
+    min-width: 200px;
+    width: 200px;
+    height: 150px;
+  }
+
+  .service-content {
+    padding: 1rem;
+  }
+
+  .service-title {
+    font-size: 14px;
+  }
+}
+
+/* Très petits écrans */
+@media (max-width: 480px) {
+  .services-container {
+    padding-left: 1rem;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .section-description{
+    font-size: 14px;
+  }
+  
+
+  .services-grid {
+    padding-right: 1rem;
+  }
+
+  .service-card {
+    min-width: 180px;
+    width: 180px;
+    height: 250px;
+  }
+
+  .service-title {
+    font-size: 12px;
+  }
+  .cta-button{
+    font-size: 14px;
+  }
+}

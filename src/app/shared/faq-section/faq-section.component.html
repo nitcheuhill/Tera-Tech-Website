@@ -1,0 +1,92 @@
+<!-- faq-section.component.html -->
+<section class="faq-section">
+  <div class="faq-container">
+    <div class="faq-content">
+      <!-- Partie gauche - Illustration -->
+      <div class="faq-illustration">
+        <img
+          src="/Assets/Hero-section/faq1.png"
+          alt="FAQ Illustration"
+          class="illustration-image"
+        />
+      </div>
+
+      <!-- Partie droite - Contenu FAQ -->
+      <div class="faq-main-content">
+        <!-- En-tête -->
+        <div class="faq-header">
+          <h2 class="faq-title">
+            Foire aux <span class="highlight">Questions</span>
+          </h2>
+          <p class="faq-description">
+            On a sûrement déjà la réponse à votre question !<br />
+            Explorez notre FAQ pour obtenir rapidement les réponses<br />
+            que vous cherchez.
+          </p>
+
+          <!-- Barre de recherche -->
+          <div class="search-container">
+            <input
+              type="text"
+              [(ngModel)]="searchTerm"
+              (ngModelChange)="onSearchChange()"
+              placeholder="Recherche"
+              class="search-input"
+            />
+            <img
+              src="/Assets/Hero-section/search-normal.svg"
+              alt="Search"
+              class="search-icon"
+            />
+          </div>
+        </div>
+
+        <!-- Liste des FAQs -->
+        <div class="faq-list" *ngIf="filteredFaqs.length > 0">
+          <div
+            *ngFor="
+              let faq of filteredFaqs;
+              let i = index;
+              trackBy: trackByFaqId
+            "
+            class="faq-item"
+            [class.open]="faq.isOpen"
+          >
+            <div class="faq-question" (click)="toggleFaq(faq.id)">
+              <span class="question-number">{{ i + 1 }}.</span>
+              <span class="question-text">{{ faq.question }}</span>
+              <span class="toggle-icon" [class.rotated]="faq.isOpen">+</span>
+            </div>
+
+            <div class="faq-answer" [class.show]="faq.isOpen">
+              <p>{{ faq.answer }}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Message de recherche vide -->
+        <div
+          class="no-results"
+          *ngIf="filteredFaqs.length === 0 && searchTerm.trim()"
+        >
+          <img
+            src="/Assets/Hero-section/search-status.svg"
+            alt="Aucun résultat"
+            class="no-results-image"
+          />
+          <h3>Aucun résultat trouvé</h3>
+          <p>
+            Essayez avec d'autres mots-clés ou consultez toutes nos questions
+            fréquentes.
+          </p>
+          <button
+            class="reset-search-btn"
+            (click)="searchTerm = ''; onSearchChange()"
+          >
+            Voir toutes les questions
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

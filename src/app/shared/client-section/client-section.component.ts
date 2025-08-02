@@ -17,12 +17,6 @@ interface TrustLogo {
 export class ClientSectionComponent {
   trustLogos: TrustLogo[] = [
     {
-      id: 1,
-      name: 'MTS Sarl',
-      imagePath: '/Assets/About-section/Logo/logo.png',
-      alt: 'MTS Sarl Logo',
-    },
-    {
       id: 2,
       name: 'Tera Tech Solutions Sarl',
       imagePath: '/Assets/About-section/Logo/logo1_prev_ui.png',
