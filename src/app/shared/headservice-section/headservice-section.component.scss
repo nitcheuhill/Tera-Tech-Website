@@ -1,0 +1,152 @@
+.headservice-section {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  background-image: url('/Assets/Services/engeneer.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 80px 20px;
+
+  // Couche noire avec opacité 30%
+  .background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+
+  .content-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 1.5rem;
+    max-width: 1300px;
+    margin: 0 auto;
+    color: white;
+
+    .section-header {
+      margin-bottom: 24px;
+
+      .section-tag {
+        display: inline-block;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 16px 24px;
+        font-size: 20px;
+        font-weight: 500;
+        margin: 0;
+        letter-spacing: 0.5px;
+        font-family: 'baskerville-regular';
+      }
+    }
+
+    .main-content {
+      .main-title {
+        font-size: 40px;
+        font-weight: 100;
+        line-height: 1.2;
+        margin: 0 0 32px 0;
+       font-family: 'poppins-semi';
+      }
+
+      .description {
+        font-size: 18px;
+        line-height: 1.6;
+        margin: 0;
+        opacity: 0.95;
+        font-family: 'poppins-regular';
+
+        .company-highlight {
+          font-weight: 600;
+          color: #ED6A06;
+        }
+      }
+    }
+  }
+}
+
+// Responsive Tablette (768px - 1024px)
+@media (max-width: 1024px) {
+  .headservice-section {
+    padding: 60px 16px;
+    min-height: 450px;
+
+    .content-container {
+      .main-content {
+        .main-title {
+          font-size: 40px;
+          margin-bottom: 24px;
+        }
+
+        .description {
+          font-size: 17px;
+        }
+      }
+
+      .section-header {
+        .section-tag {
+          font-size: 15px;
+          padding: 10px 20px;
+        }
+      }
+    }
+  }
+}
+
+// Responsive Téléphone (max 767px)
+@media (max-width: 767px) {
+  .headservice-section {
+    padding: 40px 16px;
+    min-height: 400px;
+
+    .content-container {
+      .section-header {
+        margin-bottom: 20px;
+
+        .section-tag {
+          font-size: 14px;
+          padding: 8px 16px;
+        }
+      }
+
+      .main-content {
+        .main-title {
+          font-size: 32px;
+          margin-bottom: 20px;
+          line-height: 1.3;
+        }
+
+        .description {
+          font-size: 16px;
+          line-height: 1.7;
+        }
+      }
+    }
+  }
+}
+
+// Responsive très petit écran (max 480px)
+@media (max-width: 480px) {
+  .headservice-section {
+    padding: 32px 12px;
+
+    .content-container {
+      .main-content {
+        .main-title {
+          font-size: 20px;
+        }
+
+        .description {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .section-header{
+    margin-top: 2rem;
+  }
+}

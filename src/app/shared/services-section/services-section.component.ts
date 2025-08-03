@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 interface Service {
   id: number;
@@ -10,7 +11,7 @@ interface Service {
 
 @Component({
   selector: 'app-services-section',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './services-section.component.html',
   styleUrl: './services-section.component.scss',
 })
