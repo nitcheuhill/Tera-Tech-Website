@@ -28,10 +28,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
   scrollThreshold = 50;
   isHomePage = true;
   currentUrl = '';
+  activeSection = ''; // Nouvelle propriété pour tracker la section active
   private routerSubscription: Subscription = new Subscription();
 
   constructor(
-    private router: Router, // Gardé privé
+    private router: Router,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
@@ -40,6 +41,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.checkCurrentRoute();
       this.subscribeToRouteChanges();
       this.checkNavbarState();
+      this.checkActiveSection(); // Nouvelle méthode
     }
   }
 
@@ -54,6 +56,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     if (isPlatformBrowser(this.platformId)) {
       this.checkNavbarState();
       this.handleScrollDirection();
+      this.checkActiveSection(); // Vérifier la section active au scroll
     }
   }
 
@@ -81,10 +84,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
         // Réinitialiser l'état de la navbar lors du changement de route
         if (!this.isHomePage) {
           this.isTransparent = false;
+          this.activeSection = ''; // Reset active section sur autres pages
         } else {
           // Si on revient sur la home page, vérifier la position
           setTimeout(() => {
             this.checkNavbarState();
+            this.checkActiveSection();
           }, 100);
         }
 
@@ -108,6 +113,39 @@ export class HeaderComponent implements OnInit, OnDestroy {
       // Si la hero section n'existe pas, utiliser la navbar blanche
       this.isTransparent = false;
     }
+  }
+
+  // Nouvelle méthode pour détecter la section active
+  private checkActiveSection() {
+    if (!this.isHomePage) {
+      return;
+    }
+
+    const sections = [
+      { id: 'app-hero-section', name: 'hero' },
+      { id: 'app-about-section', name: 'about' },
+      { id: 'app-faq-section', name: 'faq' },
+      { id: 'app-contact-form', name: 'contact' },
+    ];
+
+    const scrollPosition = window.pageYOffset + 150; // Offset pour une meilleure détection
+
+    let currentSection = 'hero'; // Par défaut sur hero
+
+    for (const section of sections) {
+      const element = document.querySelector(section.id) as HTMLElement;
+      if (element) {
+        const elementTop = element.offsetTop;
+        const elementBottom = elementTop + element.offsetHeight;
+
+        if (scrollPosition >= elementTop && scrollPosition < elementBottom) {
+          currentSection = section.name;
+          break;
+        }
+      }
+    }
+
+    this.activeSection = currentSection;
   }
 
   private handleScrollDirection() {
@@ -168,5 +206,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   closeMobileMenu() {
     this.isMobileMenuOpen = false;
+  }
+
+  // Méthodes utilitaires pour vérifier la section active
+  isActiveSection(sectionName: string): boolean {
+    return this.activeSection === sectionName;
   }
 }

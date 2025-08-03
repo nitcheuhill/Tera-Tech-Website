@@ -27,12 +27,16 @@
     <div class="navbar-nav desktop-nav">
       <a
         class="nav-link"
-        [class.active]="isHomePage"
+        [class.active]="isHomePage && isActiveSection('hero')"
         (click)="scrollToSection('app-hero-section')"
       >
         <span>Accueil</span>
       </a>
-      <a class="nav-link" (click)="scrollToSection('app-about-section')">
+      <a
+        class="nav-link"
+        [class.active]="isHomePage && isActiveSection('about')"
+        (click)="scrollToSection('app-about-section')"
+      >
         <span>À propos</span>
       </a>
       <a
@@ -42,11 +46,16 @@
       >
         <span>Nos services</span>
       </a>
-      <a class="nav-link" (click)="scrollToSection('app-faq-section')">
+      <a
+        class="nav-link"
+        [class.active]="isHomePage && isActiveSection('faq')"
+        (click)="scrollToSection('app-faq-section')"
+      >
         <span>FAQ</span>
       </a>
       <a
         class="nav-link contact-btn"
+        [class.active]="isHomePage && isActiveSection('contact')"
         (click)="scrollToSection('app-contact-form')"
       >
         <span>Contact</span>
@@ -68,12 +77,16 @@
     <div class="mobile-nav-content">
       <a
         class="mobile-nav-link"
-        [class.active]="isHomePage"
+        [class.active]="isHomePage && isActiveSection('hero')"
         (click)="scrollToSection('app-hero-section')"
       >
         <span>Accueil</span>
       </a>
-      <a class="mobile-nav-link" (click)="scrollToSection('app-about-section')">
+      <a
+        class="mobile-nav-link"
+        [class.active]="isHomePage && isActiveSection('about')"
+        (click)="scrollToSection('app-about-section')"
+      >
         <span>À propos</span>
       </a>
       <a
@@ -83,11 +96,16 @@
       >
         <span>Nos services</span>
       </a>
-      <a class="mobile-nav-link" (click)="scrollToSection('app-faq-section')">
+      <a
+        class="mobile-nav-link"
+        [class.active]="isHomePage && isActiveSection('faq')"
+        (click)="scrollToSection('app-faq-section')"
+      >
         <span>FAQ</span>
       </a>
       <a
         class="mobile-nav-link contact-mobile"
+        [class.active]="isHomePage && isActiveSection('contact')"
         (click)="scrollToSection('app-contact-form')"
       >
         <span>Contact</span>
