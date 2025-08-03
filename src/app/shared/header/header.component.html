@@ -1,1 +1,104 @@
-<p>header works!</p>
+<nav
+  class="navbar"
+  [class.transparent]="isTransparent"
+  [class.visible]="isVisible"
+  [class.mobile-menu-open]="isMobileMenuOpen"
+>
+  <div class="navbar-container">
+    <!-- Logo Section -->
+    <div class="navbar-brand">
+      <div class="logo" (click)="scrollToSection('app-hero-section')">
+        <!-- Logo pour navbar transparente (hero section) -->
+        <div class="logo-transparent" *ngIf="isTransparent">
+          <img
+            src="/Assets/Hero-section/LogoTransparent.svg"
+            alt="logo-transparent"
+          />
+        </div>
+
+        <!-- Logo pour navbar blanche -->
+        <div class="logo-solid" *ngIf="!isTransparent">
+          <img alt="logo-solid" src="/Assets/Hero-section/Logo-solid.svg" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <div class="navbar-nav desktop-nav">
+      <a
+        class="nav-link"
+        [class.active]="isHomePage"
+        (click)="scrollToSection('app-hero-section')"
+      >
+        <span>Accueil</span>
+      </a>
+      <a class="nav-link" (click)="scrollToSection('app-about-section')">
+        <span>À propos</span>
+      </a>
+      <a
+        class="nav-link"
+        [class.active]="!isHomePage && currentUrl.includes('services')"
+        (click)="navigateToServices()"
+      >
+        <span>Nos services</span>
+      </a>
+      <a class="nav-link" (click)="scrollToSection('app-faq-section')">
+        <span>FAQ</span>
+      </a>
+      <a
+        class="nav-link contact-btn"
+        (click)="scrollToSection('app-contact-form')"
+      >
+        <span>Contact</span>
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <div class="mobile-menu-btn" (click)="toggleMobileMenu()">
+      <div class="hamburger" [class.active]="isMobileMenuOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" [class.active]="isMobileMenuOpen">
+    <div class="mobile-nav-content">
+      <a
+        class="mobile-nav-link"
+        [class.active]="isHomePage"
+        (click)="scrollToSection('app-hero-section')"
+      >
+        <span>Accueil</span>
+      </a>
+      <a class="mobile-nav-link" (click)="scrollToSection('app-about-section')">
+        <span>À propos</span>
+      </a>
+      <a
+        class="mobile-nav-link"
+        [class.active]="!isHomePage && currentUrl.includes('services')"
+        (click)="navigateToServices()"
+      >
+        <span>Nos services</span>
+      </a>
+      <a class="mobile-nav-link" (click)="scrollToSection('app-faq-section')">
+        <span>FAQ</span>
+      </a>
+      <a
+        class="mobile-nav-link contact-mobile"
+        (click)="scrollToSection('app-contact-form')"
+      >
+        <span>Contact</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Overlay pour mobile -->
+  <div
+    class="mobile-overlay"
+    [class.active]="isMobileMenuOpen"
+    (click)="closeMobileMenu()"
+  ></div>
+</nav>
