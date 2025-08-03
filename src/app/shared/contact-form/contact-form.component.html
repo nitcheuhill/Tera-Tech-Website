@@ -1,1 +1,226 @@
-<p>contact-form works!</p>
+<!-- contact-section.component.html -->
+<section class="contact-section">
+  <div class="contact-container">
+    <div class="contact-content">
+      <!-- Partie gauche - Informations de contact -->
+      <div class="contact-info">
+        <div class="contact-header">
+          <h2 class="contact-title">
+            Contactez - <span class="highlight">Nous</span>
+          </h2>
+          <p class="contact-description">
+            Une question, un besoin ou un projet en tête ?<br />
+            Contactez <strong>{{ contactInfo.companyName }}</strong> via le
+            formulaire, par e-mail, WhatsApp ou téléphone. Notre équipe est
+            disponible et réactive pour vous accompagner dans tous vos besoins
+          </p>
+        </div>
+
+        <!-- Informations de contact -->
+        <div class="contact-details">
+          <div class="contact-item" (click)="onEmailClick()">
+            <div class="contact-item-content">
+              <span class="contact-text">{{ contactInfo.email }}</span>
+            </div>
+          </div>
+
+          <div class="contact-item" (click)="onPhoneClick()">
+            <div class="contact-item-content">
+              <span class="contact-text">{{ contactInfo.phone }}</span>
+            </div>
+          </div>
+
+          <!-- Boutons d'action -->
+          <div class="contact-actions">
+            <button class="action-btn phone-btn" (click)="onPhoneClick()">
+              <img
+                src="/Assets/Hero-section/whatsapp.svg"
+                alt="Téléphone"
+                class="action-icon"
+              />
+            </button>
+            <button class="action-btn email-btn" (click)="onEmailClick()">
+              <img
+                src="/Assets/Hero-section/sms.svg"
+                alt="Email"
+                class="action-icon"
+              />
+            </button>
+          </div>
+        </div>
+
+        <!-- Carte géographique -->
+        <div class="map-container">
+          <img
+            src="/Assets/Hero-section/maps.jpg"
+            alt="Notre localisation"
+            class="map-image"
+          />
+          <div class="map-overlay">
+            <div class="location-pin">
+              <img
+                src="/Assets/Hero-section/location.svg"
+                alt="Localisation"
+                class="pin-icon"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Partie droite - Formulaire de contact -->
+      <div class="contact-form-section">
+        <!-- Messages de feedback -->
+        <!-- <div class="feedback-messages">
+          <div class="success-message" [class.show]="showSuccessMessage">
+            <img
+              src="/assets/images/contact/success-icon.png"
+              alt="Succès"
+              class="feedback-icon"
+            />
+            <span>Votre message a été envoyé avec succès !</span>
+          </div>
+
+          <div class="error-message" [class.show]="showErrorMessage">
+            <img
+              src="/assets/images/contact/error-icon.png"
+              alt="Erreur"
+              class="feedback-icon"
+            />
+            <span>Une erreur s'est produite. Veuillez réessayer.</span>
+          </div>
+        </div> -->
+
+        <form
+          #contactFormRef="ngForm"
+          (ngSubmit)="onSubmit(contactFormRef)"
+          class="contact-form"
+        >
+          <!-- Nom -->
+          <div class="form-group">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              [(ngModel)]="contactForm.name"
+              placeholder="Votre nom ou celui de votre entreprise"
+              class="form-input"
+              required
+              #nameField="ngModel"
+            />
+            <div class="form-underline"></div>
+            <div
+              class="error-text"
+              *ngIf="nameField.invalid && nameField.touched"
+            >
+              Le nom est requis
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              [(ngModel)]="contactForm.email"
+              placeholder="E-mail"
+              class="form-input"
+              required
+              email
+              #emailField="ngModel"
+            />
+            <div class="form-underline"></div>
+            <div
+              class="error-text"
+              *ngIf="emailField.invalid && emailField.touched"
+            >
+              <span *ngIf="emailField.errors?.['required']"
+                >L'email est requis</span
+              >
+              <span *ngIf="emailField.errors?.['email']"
+                >Format d'email invalide</span
+              >
+            </div>
+          </div>
+
+          <!-- Téléphone -->
+          <div class="form-group">
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              [(ngModel)]="contactForm.phone"
+              placeholder="Téléphone"
+              class="form-input"
+              #phoneField="ngModel"
+            />
+            <div class="form-underline"></div>
+          </div>
+
+          <!-- Objet -->
+          <div class="form-group">
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              [(ngModel)]="contactForm.subject"
+              placeholder="Objet"
+              class="form-input"
+              required
+              #subjectField="ngModel"
+            />
+            <div class="form-underline"></div>
+            <div
+              class="error-text"
+              *ngIf="subjectField.invalid && subjectField.touched"
+            >
+              L'objet est requis
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div class="form-group">
+            <textarea
+              id="message"
+              name="message"
+              [(ngModel)]="contactForm.message"
+              placeholder="Décrivez nous votre besoin"
+              class="form-textarea"
+              rows="5"
+              required
+              #messageField="ngModel"
+            ></textarea>
+            <div class="form-underline"></div>
+            <div
+              class="error-text"
+              *ngIf="messageField.invalid && messageField.touched"
+            >
+              Le message est requis
+            </div>
+          </div>
+
+          <!-- Bouton d'envoi -->
+          <div class="form-submit">
+            <button
+              type="submit"
+              class="submit-btn"
+              [disabled]="contactFormRef.invalid || isSubmitting"
+              [class.loading]="isSubmitting"
+            >
+              <span *ngIf="!isSubmitting">Envoyez</span>
+              <span *ngIf="isSubmitting" class="loading-text">
+                <img
+                  src="/assets/images/contact/loading-spinner.png"
+                  alt="Chargement"
+                  class="loading-spinner"
+                />
+                Envoi en cours...
+              </span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

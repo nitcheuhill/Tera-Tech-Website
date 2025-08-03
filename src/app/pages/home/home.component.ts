@@ -5,6 +5,7 @@ import { ClientSectionComponent } from '../../shared/client-section/client-secti
 import { StatisticSectionComponent } from '../../shared/statistic-section/statistic-section.component';
 import { ServicesSectionComponent } from '../../shared/services-section/services-section.component';
 import { FaqSectionComponent } from '../../shared/faq-section/faq-section.component';
+import { ContactFormComponent } from '../../shared/contact-form/contact-form.component';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +17,7 @@ import { FaqSectionComponent } from '../../shared/faq-section/faq-section.compon
     StatisticSectionComponent,
     ServicesSectionComponent,
     FaqSectionComponent,
+    ContactFormComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
