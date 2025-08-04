@@ -64,8 +64,16 @@
       <div class="footer-section">
         <h3 class="footer-title">Nos Services</h3>
         <ul class="footer-links">
-          <li *ngFor="let service of services">
-            <a class="footer-link">{{ service }}</a>
+          <li *ngFor="let service of servicesWithSections">
+            <a
+              (click)="service.action()"
+              class="footer-link"
+              role="button"
+              tabindex="0"
+              [attr.aria-label]="'Naviguer vers ' + service.name"
+            >
+              {{ service.name }}
+            </a>
           </li>
         </ul>
       </div>

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 interface Service {
   id: number;
@@ -16,6 +16,8 @@ interface Service {
   styleUrl: './services-section.component.scss',
 })
 export class ServicesSectionComponent {
+  constructor(private router: Router) {}
+
   // Données dynamiques des services
   services: Service[] = [
     {
@@ -52,6 +54,13 @@ export class ServicesSectionComponent {
       "Parce que chaque entreprise est unique, nous avons développé quatre pôles d'excellence pour répondre à tous vos besoins",
     buttonText: 'Voir plus',
   };
+  // Mapping des services vers les sélecteurs des sections correspondantes
+  private serviceSectionMap: { [key: number]: string } = {
+    1: 'app-sell-info-tools-section',
+    2: 'app-rentengins',
+    3: 'app-logistic-transport',
+    4: 'app-video-service',
+  };
 
   trackByServiceId(index: number, service: Service): number {
     return service.id;
@@ -59,11 +68,18 @@ export class ServicesSectionComponent {
 
   onServiceClick(service: Service): void {
     // Logique lors du clic sur un service
-    console.log('Service cliqué:', service);
+    // console.log('Service cliqué:', service);
+    // Navigation vers la page services avec le fragment
+    const sectionSelector = this.serviceSectionMap[service.id];
+    if (sectionSelector) {
+      this.router.navigate(['/services'], {
+        fragment: sectionSelector,
+      });
+    }
   }
 
   onCtaClick(): void {
     // Logique lors du clic sur le bouton CTA
-    console.log('Bouton CTA cliqué');
+    // console.log('Bouton CTA cliqué');
   }
 }

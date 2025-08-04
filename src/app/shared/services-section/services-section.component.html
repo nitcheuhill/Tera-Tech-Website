@@ -21,6 +21,12 @@
             *ngFor="let service of services; trackBy: trackByServiceId"
             class="service-card"
             [style.backgroundImage]="'url(' + service.image + ')'"
+            (click)="onServiceClick(service)"
+            role="button"
+            tabindex="0"
+            [attr.aria-label]="'Cliquer pour voir ' + service.title"
+            (keydown.enter)="onServiceClick(service)"
+            (keydown.space)="onServiceClick(service)"
           >
             <div class="service-overlay"></div>
             <div class="service-content">
