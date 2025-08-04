@@ -52,8 +52,7 @@
     .showcase-image {
       width: 100%;
       max-width: 1200px;
-      height: 400px;
-      object-fit: contain;
+      object-fit: cover;
    
     }
   }
@@ -194,12 +193,6 @@
       }
     }
 
-    .image-section {
-      .showcase-image {
-        height: 120px;
-      }
-    }
-
     .equipment-section {
       .equipment-intro {
         font-size: 16px;
@@ -264,7 +257,7 @@
 
     .commitment-section {
       .commitment-title {
-        font-size: 15px;
+        font-size: 14px;
       }
 
       .commitment-text {

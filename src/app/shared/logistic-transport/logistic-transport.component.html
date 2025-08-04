@@ -1,0 +1,73 @@
+<section class="sell-info-tools-section">
+  <div class="container">
+    <!-- Header Section -->
+    <div class="header-content">
+      <h1 class="main-title">
+        Logistique et <span class="highlight">transport</span>
+      </h1>
+
+      <p class="intro-text">
+        Pour une entreprise, une bonne logistique est la clé de la réussite.Chez
+        <span class="company-name">Tera Tech Solutions</span>, nous ne nous
+        contentons pas de vous fournir des équipements de qualité, nous assurons
+        également que vos marchandises arrivent à bon port, en temps et en
+        heure. Notre service de logistique et de transport est conçu pour vous
+        offrir une tranquillité d'esprit totale, en gérant le cheminement de vos
+        produits, d'un point à un autre.
+      </p>
+    </div>
+
+    <!-- Image Section -->
+    <div class="image-section">
+      <img
+        src="/Assets/Services/Log.svg"
+        alt="Matériel informatique"
+        class="showcase-image"
+      />
+    </div>
+
+    <!-- Equipment List Section -->
+    <div class="equipment-section">
+      <h2>Nos services de logistique</h2>
+      <p class="equipment-intro">
+        Nous proposons une gamme complète de services pour optimiser votre
+        chaîne d'approvisionnement :
+      </p>
+
+      <ul class="equipment-list">
+        <li class="equipment-item" *ngFor="let equipment of equipments">
+          <span class="equipment-title">{{ equipment.title }}</span> :
+          <span class="equipment-description">{{ equipment.description }}</span>
+        </li>
+      </ul>
+    </div>
+    <div class="equipment-section">
+      <h2>Notre flotte de transport</h2>
+      <p class="equipment-intro">
+        Nous disposons d'une flotte de véhicules adaptée pour tous vos besoins :
+      </p>
+
+      <ul class="equipment-list">
+        <li class="equipment-item" *ngFor="let equipment of equipments1">
+          <span class="equipment-title">{{ equipment.title }}</span> :
+          <span class="equipment-description">{{ equipment.description }}</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Commitment Section -->
+    <div class="commitment-section">
+      <h2 class="commitment-title">Notre engagement</h2>
+
+      <p class="commitment-text">
+        Notre équipe de logisticiens expérimentés est là pour vous proposer des
+        solutions sur mesure. Nous nous engageons à respecter les délais, à
+        assurer la sécurité de vos biens et à vous tenir informés à chaque étape
+        du processus. Faites confiance à
+        <span style="color: #ff6b35">Tera Tech Solutions</span> pour la gestion
+        de votre logistique et concentrez-vous sur ce qui compte le plus : le
+        développement de votre entreprise.
+      </p>
+    </div>
+  </div>
+</section>

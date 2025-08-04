@@ -1,0 +1,63 @@
+<section class="sell-info-tools-section">
+  <div class="container">
+    <!-- Header Section -->
+    <div class="header-content">
+      <h1 class="main-title">
+        Location engins de <span class="highlight">terrassement</span>
+      </h1>
+
+      <p class="intro-text">
+        Nous allons au-delà de la technologie pour vous accompagner sur le
+        terrain. Nos services de location d'engins et de terrassement sont
+        conçus pour vous aider à concrétiser vos projets de construction, grands
+        ou petits. Que ce soit pour préparer un terrain, creuser des fondations
+        ou déplacer des matériaux, notre flotte d'engins modernes et entretenus
+        est à votre disposition.
+      </p>
+    </div>
+
+    <!-- Image Section -->
+    <div class="image-section">
+      <img
+        src="/Assets/Services/Engins.svg"
+        alt="Matériel informatique"
+        class="showcase-image"
+      />
+    </div>
+
+    <!-- Equipment List Section -->
+    <div class="equipment-section">
+      <p class="equipment-intro">
+        Nous proposons la location d'une large gamme d'engins :
+      </p>
+
+      <ul class="equipment-list">
+        <li class="equipment-item" *ngFor="let equipment of equipments">
+          <span class="equipment-title">{{ equipment.title }}</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Commitment Section -->
+    <div class="commitment-section">
+      <h2 class="commitment-title">Notre engagement : Qualité et expertise</h2>
+
+      <p class="commitment-text">
+        Chez Tera Tech, nous croyons qu'un service de qualité va bien au-delà de
+        simple vente ou location de produits. Notre mission est de vous offrir
+        une expérience client exceptionnelle. C'est pourquoi nous mettons
+        l'accent sur trois piliers fondamentaux :
+      </p>
+      <div class="equipment-section">
+        <ul class="equipment-list">
+          <li class="equipment-item" *ngFor="let equipment of equipments1">
+            <span class="equipment-title">{{ equipment.title }}</span> :
+            <span class="equipment-description">{{
+              equipment.description
+            }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
