@@ -1,0 +1,59 @@
+<section class="sell-info-tools-section">
+  <div class="container">
+    <!-- Header Section -->
+    <div class="header-content">
+      <h1 class="main-title">
+        Vente de matériels <span class="highlight">informatique</span>
+      </h1>
+
+      <p class="intro-text">
+        Le monde numérique évolue à grande vitesse, et pour rester compétitif,
+        il est crucial d'avoir un équipement fiable et performant. Chez
+        <span class="company-name">Tera Tech Solutions</span>, nous comprenons
+        l'importance de la technologie pour votre productivité. C'est pourquoi
+        nous mettons à votre disposition une gamme complète de matériel
+        informatique, sélectionné avec soin pour répondre à vos besoins
+        spécifiques, que vous soyez un professionnel ou un particulier.
+      </p>
+    </div>
+
+    <!-- Image Section -->
+    <div class="image-section">
+      <img
+        src="/Assets/Services/Info.svg"
+        alt="Matériel informatique"
+        class="showcase-image"
+      />
+    </div>
+
+    <!-- Equipment List Section -->
+    <div class="equipment-section">
+      <p class="equipment-intro">
+        Nous proposons une vaste sélection d'équipements, incluant :
+      </p>
+
+      <ul class="equipment-list">
+        <li class="equipment-item" *ngFor="let equipment of equipments">
+          <span class="equipment-title">{{ equipment.title }}</span> :
+          <span class="equipment-description">{{ equipment.description }}</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Commitment Section -->
+    <div class="commitment-section">
+      <h2 class="commitment-title">Notre engagement : Qualité et expertise</h2>
+
+      <p class="commitment-text">
+        Nous ne nous contentons pas de vendre des produits. Notre équipe
+        d'experts est là pour vous conseiller et vous accompagner dans le choix
+        des solutions les plus adaptées à votre environnement et à votre budget.
+        Nous privilégions des marques reconnues pour leur fiabilité et leur
+        durabilité, et nous nous engageons à vous fournir un service après-vente
+        de qualité. Faites le choix de l'efficacité et de la performance.
+        Découvrez comment nous pouvons vous aider à équiper votre espace de
+        travail et à propulser votre entreprise vers l'avenir.
+      </p>
+    </div>
+  </div>
+</section>

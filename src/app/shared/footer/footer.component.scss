@@ -1,5 +1,6 @@
 /* Import des polices */
 
+
 .footer {
   position: relative;
   background: linear-gradient(135deg, #272D67 0%, #1a1f4a 50%, #0f1229 100%);
@@ -108,7 +109,7 @@
 }
 
 .footer-description {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'poppins-regular', sans-serif;
   font-size: 14px;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.8);
@@ -128,7 +129,7 @@
   gap: 0.5rem;
   padding: 0.8rem 1.5rem;
   border: none;
-  font-family: 'Poppins-regular';
+  font-family: 'poppins-regular';
   font-weight: 100;
   font-size: 12px;
   cursor: pointer;
@@ -171,7 +172,7 @@
 
 /* Sections du footer */
 .footer-section h3.footer-title {
-  font-family: 'poppins';
+  font-family: 'poppins-regular';
   font-size: 16px;
   font-weight: 600;
   color: #FFFFFF;
@@ -202,7 +203,7 @@
 }
 
 .footer-link {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'poppins-regular', sans-serif;
   font-size: 14px;
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
@@ -260,7 +261,7 @@
 }
 
 .contact-item span {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'poppins-regular', sans-serif;
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.8);
 }
@@ -271,7 +272,7 @@
 }
 
 .social-title {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'poppins-regular', sans-serif;
   font-size: 1.1rem;
   font-weight: 500;
   color: #FFFFFF;
@@ -471,7 +472,7 @@
 }
 
 .copyright p {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'poppins-regular', sans-serif;
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.7);
   margin: 0;
@@ -485,7 +486,7 @@
 }
 
 .footer-bottom-link {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'poppins-regular', sans-serif;
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
