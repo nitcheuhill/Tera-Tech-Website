@@ -32,7 +32,7 @@ export class ContactFormComponent {
 
   contactInfo = {
     email: 'info@tera-tech.com',
-    phone: '+237 689 542 894',
+    phone: '+237 698 800 120',
     companyName: 'Tera Tech Solutions Sarl',
   };
 

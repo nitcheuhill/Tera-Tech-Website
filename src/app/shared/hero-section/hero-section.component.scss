@@ -87,7 +87,6 @@
 /* Button */
 .hero-btn {
   background-color: white ;
-  color: #ff6b35;
   border: none;
   padding: 1rem 2.5rem;
   font-size: 1rem;
@@ -97,7 +96,15 @@
   text-transform: none;
   font-family: 'poppins-regular';
 }
+.hero-btn a {
+color: #ff6b35;
+text-decoration: none;
 
+}
+
+.hero-btn a:hover{
+  color: white;
+}
 .hero-btn:hover {
   background-color: #e55a2e;
   color: white;

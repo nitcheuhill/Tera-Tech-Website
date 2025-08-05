@@ -14,7 +14,7 @@ export class FooterComponent implements OnInit {
 
   // Informations de contact
   contactInfo = {
-    phone: '+237 123 456 789',
+    phone: '+237698800120',
     email: 'contact@votreentreprise.com',
     address: 'Douala, Littoral, Cameroun',
   };
@@ -67,7 +67,7 @@ export class FooterComponent implements OnInit {
     { name: 'LinkedIn', icon: 'linkedin', url: 'https://linkedin.com' },
     { name: 'Twitter', icon: 'twitter', url: 'https://twitter.com' },
     { name: 'Instagram', icon: 'instagram', url: 'https://instagram.com' },
-    { name: 'WhatsApp', icon: 'phone', url: 'https://wa.me/237123456789' },
+    { name: 'WhatsApp', icon: 'phone', url: 'https://wa.me/237698800120' },
   ];
 
   constructor(private router: Router) {}
