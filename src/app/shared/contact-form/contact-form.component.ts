@@ -31,7 +31,7 @@ export class ContactFormComponent {
   showErrorMessage = false;
 
   contactInfo = {
-    email: 'info@tera-tech.com',
+    email: 'teratechsolutionssarl@gmail.com',
     phone: '+237 698 800 120',
     companyName: 'Tera Tech Solutions Sarl',
   };

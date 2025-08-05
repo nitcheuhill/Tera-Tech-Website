@@ -15,7 +15,7 @@ export class FooterComponent implements OnInit {
   // Informations de contact
   contactInfo = {
     phone: '+237698800120',
-    email: 'contact@votreentreprise.com',
+    email: 'teratechsolutionssarl@gmail.com',
     address: 'Douala, Littoral, Cameroun',
   };
 
