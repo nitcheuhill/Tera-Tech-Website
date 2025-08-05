@@ -1,0 +1,8 @@
+---
+deployment:
+  tasks:
+    - source /opt/cpanel/ea-nodejs10/bin/enable
+    - npm install
+    - npx ng build --configuration production
+    - rm -rf ~/public_html/*
+    - cp -r dist/tera-tech-solutions/* ~/public_html/
